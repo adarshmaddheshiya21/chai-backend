@@ -12,8 +12,14 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
-app.use(express.cookieParser())
+app.use(cookieParser())
 
+
+// import router
+import userRouter from './routes/user.routes.js'
+
+// router declarations
+app.use("/api/v1/users", userRouter);
 
 
 export {app}
