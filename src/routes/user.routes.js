@@ -5,7 +5,7 @@ const router = Router();
 import {upload} from "../controllers/multer.middleware.js"
 
 router.route('/register').post(
-    upload.fields(
+    upload.fields([
         {
             name: "avatar",
             maxCount: 1
@@ -14,7 +14,7 @@ router.route('/register').post(
             name: "coverImage",
             maxCount: 1
         }
-    ),
+    ]),
     registerUser)
 
 
